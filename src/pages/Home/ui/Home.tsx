@@ -13,7 +13,7 @@ export const Home = () => {
         </div>
       </SignedIn>
       <h1 className="text-6xl font-bold text-white text-center">
-        Welcome {isSignedIn ? viewer?.firstName : "to Conducto"}
+        Welcome {isSignedIn ? viewer?.firstName : "to Figjam"}
       </h1>
 
       <SignedOut>

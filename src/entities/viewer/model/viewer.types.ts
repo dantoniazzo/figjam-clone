@@ -1,5 +1,5 @@
 import type { ISpace } from "entities/space";
 
-export interface ConductoUserUnsafeMetadata {
+export interface FigjamUserUnsafeMetadata {
   spaces?: ISpace[];
 }

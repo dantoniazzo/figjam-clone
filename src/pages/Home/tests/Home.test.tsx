@@ -14,7 +14,7 @@ describe("Home", () => {
       </ClerkProvider>
     );
     const heading = screen.getByRole("heading", {
-      name: /Welcome to Conducto/i,
+      name: /Welcome to Figjam/i,
     });
     expect(heading).toBeInTheDocument();
   });
