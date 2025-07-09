@@ -1,3 +1,3 @@
-# Conducto testing
+# Figjam clone
 
-Conducto testing app
+Clone of the Figjam app
