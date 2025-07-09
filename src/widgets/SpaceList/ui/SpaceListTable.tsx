@@ -14,7 +14,7 @@ import {
   useReactTable,
   type VisibilityState,
 } from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
+import { ArrowUpDown, ChevronDown, Plus, MoreHorizontal } from "lucide-react";
 
 import {
   SButton,
@@ -39,7 +39,7 @@ import { useSpacesMutation } from "features/spaces-mutation";
 
 export function SpaceListTable() {
   const { spaces } = useSpaces();
-  const { deleteSpace } = useSpacesMutation();
+  const { deleteSpace, createSpace } = useSpacesMutation();
   const navigate = useNavigate();
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -168,7 +168,7 @@ export function SpaceListTable() {
 
   return (
     <div className="w-full">
-      <div className="flex items-center py-4">
+      <div className="flex items-center justify-between py-4">
         <Input
           placeholder="Filter by name..."
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
@@ -177,32 +177,43 @@ export function SpaceListTable() {
           }
           className="max-w-sm border-gray-300 text-white "
         />
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <SButton variant="outline" className="ml-auto">
-              Columns <ChevronDown />
-            </SButton>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <div className="flex items-center gap-2">
+          <SButton
+            onClick={() => {
+              createSpace(`Space ${spaces.length + 1}`);
+            }}
+            variant="outline"
+            className="ml-auto bg-blue-100 text-white border-0 cursor-pointer hover:bg-blue-600 hover:text-gray-100"
+          >
+            New <Plus />
+          </SButton>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <SButton variant="outline" className="ml-auto">
+                Columns <ChevronDown />
+              </SButton>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {table
+                .getAllColumns()
+                .filter((column) => column.getCanHide())
+                .map((column) => {
+                  return (
+                    <DropdownMenuCheckboxItem
+                      key={column.id}
+                      className="capitalize"
+                      checked={column.getIsVisible()}
+                      onCheckedChange={(value) =>
+                        column.toggleVisibility(!!value)
+                      }
+                    >
+                      {column.id}
+                    </DropdownMenuCheckboxItem>
+                  );
+                })}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
       <div className="rounded-md border border-gray-300">
         <Table>
