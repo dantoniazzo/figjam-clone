@@ -1,7 +1,7 @@
-import { type ISpace } from 'entities/space';
-import { Trash2 } from 'lucide-react';
-import { useSpacesMutation } from 'features/spaces-mutation';
-import { useNavigate } from 'react-router-dom';
+import { type ISpace } from "entities/space";
+import { Trash2 } from "lucide-react";
+import { useSpacesMutation } from "features/spaces-mutation";
+import { useNavigate } from "react-router-dom";
 
 export interface SpaceProps {
   space: ISpace;
@@ -15,7 +15,7 @@ export const SpaceCard = (props: SpaceProps) => {
       onClick={() => {
         navigate(`/test/${props.space.id}`);
       }}
-      className=" cursor-pointer hover:border-blue-100 w-full h-12 flex items-center justify-between bg-gray-500 shadow-2xs shadow-background-300 rounded-sm p-4 hover:shadow-background-400 transition-shadow duration-200 ease-in-out"
+      className=" cursor-pointer hover:border-primary-100 w-full h-12 flex items-center justify-between bg-gray-500 shadow-2xs shadow-background-300 rounded-sm p-4 hover:shadow-background-400 transition-shadow duration-200 ease-in-out"
     >
       <h2 className="text-md font-semibold text-white cursor-pointer">
         {props.space.name}

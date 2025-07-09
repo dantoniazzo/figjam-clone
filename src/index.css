@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -43,6 +43,8 @@
   --color-gray-500: #121214;
   --color-pink-100: #f86eff;
   --color-pink-500: #241827;
+  --color-primary-100: #9039fb;
+  --color-primary-500: #5d24a3;
 }
 
 @theme inline {

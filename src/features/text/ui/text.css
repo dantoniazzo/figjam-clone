@@ -1,19 +1,19 @@
 .ql-container.ql-snow {
-    border: 1px solid var(--color-blue-100);
-    height: fit-content;
+  border: 1px solid var(--color-primary-100);
+  height: fit-content;
 }
 
 .ql-editor {
-    padding: 0;
-    font-size: 18px;
-    color: white;
-    overflow-y: visible;
+  padding: 0;
+  font-size: 18px;
+  color: white;
+  overflow-y: visible;
 }
 
 .ql-toolbar {
-    display: none;
+  display: none;
 }
 
 .ql-tooltip {
-    display: none;
+  display: none;
 }

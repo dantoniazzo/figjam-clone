@@ -13,7 +13,9 @@ export const ToolbarButton = (props: ToolbarButtonProps) => {
       disabled={!toolsConfig[props.tool].enabled}
       onClick={props.onClick}
       className={`rounded-sm  ${
-        props.selectedTool === props.tool ? "bg-blue-100" : "bg-background-400"
+        props.selectedTool === props.tool
+          ? "bg-primary-100"
+          : "bg-background-400"
       } hover:bg-gray-400`}
     >
       {toolsConfig[props.tool].icon}

@@ -100,7 +100,7 @@ export function SpaceListTable() {
         cell: ({ row }) => (
           <SButton
             variant="default"
-            className="bg-gray-400 cursor-pointer text-white hover:bg-blue-600"
+            className="bg-gray-400 cursor-pointer text-white hover:bg-primary-100"
             onClick={() => {
               navigate(`/test/${row.original.id}`);
             }}
@@ -183,7 +183,7 @@ export function SpaceListTable() {
               createSpace(`Space ${spaces.length + 1}`);
             }}
             variant="outline"
-            className="ml-auto bg-blue-100 text-white border-0 cursor-pointer hover:bg-blue-600 hover:text-gray-100"
+            className="ml-auto bg-primary-100 text-white border-0 cursor-pointer hover:bg-primary-500 hover:text-gray-100"
           >
             New <Plus />
           </SButton>
